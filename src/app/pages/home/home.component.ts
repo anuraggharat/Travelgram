@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { auth } from 'firebase';
 
 
 
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   ) { 
     this.isLoading=true
 
+    
 
     //get all users
     db.object('/users')

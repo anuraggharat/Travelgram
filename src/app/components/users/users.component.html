@@ -1,7 +1,13 @@
-<p>users works!</p>
-{{user| json}}
-<div class="card horizontal-display">
+<div class="card py-3 px-2 my-2">
     <div class="d-flex justify-content-center align-items-center">
-        <img [src]="user.picture" alt="" class="rounded-circle" width="50px">
+        <div class="w-25">
+            <img [src]="user.picture" alt="" class="rounded-circle" width="60px" height="60px">
+        </div>
+        <div class="w-75 h-100 d-flex flex-column justify-content-center">
+            {{user.name}}<br>
+            <span class="text-secondary">{{user.bio}}</span>
+
+        </div>
+
     </div>
 </div>

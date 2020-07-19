@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import '~ngx-toastr/toastr'
+@import '~ngx-toastr/toastr';
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+
+.logo{
+    font-family: 'Lobster', cursive;
+}
+.body{
+    font-family: 'Montserrat', sans-serif;
+}

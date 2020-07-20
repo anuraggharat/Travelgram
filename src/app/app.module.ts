@@ -20,7 +20,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { UsercardComponent } from './components/usercard/usercard.component'
 
 
 
@@ -35,7 +36,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
     AddpostComponent,
     PagenotfoundComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    UsercardComponent
   ],
   imports: [
     BrowserModule,

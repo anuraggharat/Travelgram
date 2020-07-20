@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   email=null
   uid=null
+  user=null
   constructor(
     private auth:AuthService,
     private router:Router,
@@ -28,14 +29,11 @@ export class HeaderComponent implements OnInit {
         db.object(`/users/${this.uid}`)
         .valueChanges()
         .subscribe((user)=>{
-          console.log(user);
-          
+          console.log(user); 
+          this.user=user    
         })
       }
     )
-
-    //get logged in user
-
 
   }
 

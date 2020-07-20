@@ -4,22 +4,26 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" >Home <span class="sr-only">(current)</span></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">      
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a [routerLink]="['/addpost']"   class="btn btn-primary nav-link text-white rounded">Add a Post +</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/']" >Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="!email" [routerLink]="['/signup']" routerLinkActive="active" >Signup</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item  cursor">
             <a class="nav-link" *ngIf="email" (click)="handleSignout()" >Signout</a>
           </li>
-          <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link" *ngIf="!email" [routerLink]="['/signin']" routerLinkActive="active" >Login</a>
-          </li>    
-        
+        </li>      
       </ul>
-  
+      <div *ngIf="user" class="d-flex justify-content-between nav-link btn btn-pill btn-light">
+        <img [src]="user?.picture" alt="Profile Picture" height="40px" width="40px" class="rounded-circle " />
+      </div>
     </div>
   </nav>

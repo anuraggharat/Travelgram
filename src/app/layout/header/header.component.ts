@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service'
 import {ToastrService} from 'ngx-toastr'
 import { Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-header',
@@ -11,18 +12,30 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   email=null
+  uid=null
   constructor(
     private auth:AuthService,
     private router:Router,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private db:AngularFireDatabase
   ) { 
 
     auth.getUser().subscribe(
       (user)=>{
         console.log(user);
         this.email=user?.email
+        this.uid=user?.uid
+        db.object(`/users/${this.uid}`)
+        .valueChanges()
+        .subscribe((user)=>{
+          console.log(user);
+          
+        })
       }
     )
+
+    //get logged in user
+
 
   }
 

@@ -20,6 +20,8 @@ export class AuthService {
     return this.auth.authState;
   }
 
+  
+
   signOut(){
     return this.auth.signOut()
   }

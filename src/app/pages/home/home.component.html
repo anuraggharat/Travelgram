@@ -21,8 +21,8 @@
             <div class="w-100 mb-4">
                 <app-usercard></app-usercard>
             </div>
-          <p class="text-muted text-uppercase text-left mt-3">All Current Users</p>
-          <div *ngFor="let item of users">
+          <p class="text-black text-uppercase text-left mt-5">All Current Users</p>
+          <div *ngFor="let item of users" class="list-group border-1">
               <app-users [user]="item"></app-users>
           </div>
         </div>

@@ -1,30 +1,39 @@
 <!-- {{post | json}} -->
-<div class="card mb-3 border-secondary">
-    <a href="#" target="_blank">
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-lg-between">
+    <div class="d-flex ">
+      <img [src]="post?.profilePicture" alt="" srcset="" height="50px" width="50px" class="rounded-circle">
+      <h5 class="my-auto ml-3">{{post?.by}}</h5>
+    </div>
+    <div class="h-100 d-flex flex-column justify-content-lg-center  my-auto">
+      <p class="m-0 text-muted">{{post?.date | date}}</p>
+    </div>
+
+  </div>
+    <a [href]="getInstaUrl()" target="_blank">
       <img
         [src]="post.picture"
         height="500"
         width="auto"
-        class="card-img-top img-fluid"
+        class="card-img-top img-fluid w-100 h-100"
       />
     </a>
     <div class="card-body">
-      <h5 class="card-title text-primary text-uppercase">
-        {{ post.locationName }}
-      </h5>
-      <p class="card-text">{{ post.description }}</p>
-      <p class="card-text">
-        <small class="text-muted">by:- {{ post.by }}</small>
+      <h5 class="card-text">{{ post.description }}</h5>      
+      <p>
+      <fa-icon [icon]="faloc" size="lg" primaryColor="red" class="text-danger"></fa-icon>
+      {{post.locationName}}
       </p>
     </div>
+
     <div
-      class="card-footer bg-transparent border-secondary d-flex justify-content-around align-content-center"
+      class="card-footer bg-transparent  d-flex justify-content-around align-content-center"
     >
-      <div (click)="upvotePost()" class="text-primary">
+      <div (click)="upvotePost()" class="text-success">
         <fa-icon [icon]="faThumbsUp" size="lg" primaryColor="blue"></fa-icon>
         {{ upvote }}
       </div>
-      <div (click)="downvotePost()" class="text-secondary">
+      <div (click)="downvotePost()" class="text-warning">
         <fa-icon [icon]="faThumbsDown" size="lg" primaryColor="blue"></fa-icon>
         {{ downvote }}
       </div>

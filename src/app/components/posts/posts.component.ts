@@ -1,8 +1,8 @@
 import { Component, OnInit,Input,OnChanges } from '@angular/core';
-import {faThumbsDown, faThumbsUp, faShareSquare} from '@fortawesome/free-regular-svg-icons'
+import {faThumbsDown, faThumbsUp, faShareSquare } from '@fortawesome/free-regular-svg-icons'
 import { AuthService } from 'src/app/services/auth.service';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { ToastrService } from 'ngx-toastr';
+import { faMapPin } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-posts',
@@ -17,7 +17,7 @@ export class PostsComponent implements OnInit,OnChanges {
   faThumbsDown=faThumbsDown
   faThumbsUp=faThumbsUp
   faShareSquare=faShareSquare
-
+  faloc=faMapPin
   uid=null
   upvote=0
   downvote=0

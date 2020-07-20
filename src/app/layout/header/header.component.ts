@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
         db.object(`/users/${this.uid}`)
         .valueChanges()
         .subscribe((user)=>{
-          console.log(user); 
           this.user=user    
         })
       }

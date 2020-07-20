@@ -38,6 +38,7 @@ export class AddpostComponent implements OnInit {
       this.db.object(`/users/${user.uid}`)
       .valueChanges()
       .subscribe((user)=>{
+        console.log(user)
         this.user=user
       })
     })
@@ -57,6 +58,7 @@ export class AddpostComponent implements OnInit {
       description:this.description,
       picture:this.picture,
       by:this.user.name,
+      profilePicture:this.user.picture,
       instaId:this.user.instaUserName,
       date:Date.now()
     })

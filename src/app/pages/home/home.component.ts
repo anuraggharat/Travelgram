@@ -52,6 +52,8 @@ export class HomeComponent implements OnInit {
     .subscribe(obj=>{
       if(obj){
         this.posts=Object.values(obj).sort((a,b)=>b.date-a.date)
+        console.log(this.posts);
+        
         this.isLoading=false
       }else{
         toastr.error("No posts")

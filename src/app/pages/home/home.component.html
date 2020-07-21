@@ -12,12 +12,12 @@
   
     <ng-template #Content>
       <div class="row m-5 ">
-        <div class="col col-md-8">
+        <div class="col-sm-12 col-xs-12 col-lg-8 col-md-8">
             <div *ngFor="let item of posts">
           <app-posts [post]="item"></app-posts>
             </div>
         </div>
-        <div class="col col-md-4">
+        <div class="col-sm-12 col-lg-4 col-md-4">
             <div class="w-100 mb-4">
                 <app-usercard></app-usercard>
             </div>

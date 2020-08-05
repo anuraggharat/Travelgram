@@ -1,45 +1,50 @@
 <!-- {{post | json}} -->
 <div class="card mb-3 w-100">
   <div class="card-header d-flex justify-content-between">
-    <div class="d-flex ">
-      <img [src]="post?.profilePicture" alt="" srcset="" height="50px" width="50px" class="rounded-circle">
-      <h5 class="my-auto ml-3">{{post?.by}}</h5>
-    </div>
-    <div class="h-100 d-flex flex-column justify-content-lg-center  my-auto">
-      <p class="m-0 text-muted">{{post?.date | date}}</p>
-    </div>
-
-  </div>
-    <a [href]="getInstaUrl()" target="_blank">
+    <div class="d-flex">
       <img
-        [src]="post.picture"
-        height="500"
-        width="auto"
-        class="w-100"
+        [src]="post?.profilePicture"
+        alt=""
+        srcset=""
+        height="50px"
+        width="50px"
+        class="rounded-circle"
       />
-    </a>
-    <div class="card-body">
-      <h5 class="card-text">{{ post.description }}</h5>      
-      <p>
-      <fa-icon [icon]="faloc" size="lg" primaryColor="red" class="text-danger"></fa-icon>
-      {{post.locationName}}
-      </p>
+      <h5 class="my-auto ml-3">{{ post?.by }}</h5>
     </div>
-
-    <div
-      class="card-footer bg-transparent  d-flex justify-content-around align-content-center"
-    >
-      <div (click)="upvotePost()" class="text-success">
-        <fa-icon [icon]="faThumbsUp" size="lg" primaryColor="blue"></fa-icon>
-        {{ upvote }}
-      </div>
-      <div (click)="downvotePost()" class="text-warning">
-        <fa-icon [icon]="faThumbsDown" size="lg" primaryColor="blue"></fa-icon>
-        {{ downvote }}
-      </div>
-      <a [href]="getInstaUrl()" target="_blank" class="text-primary">
-        <fa-icon [icon]="faShareSquare" size="lg" primaryColor="blue"></fa-icon>
-      </a>
+    <div class="h-100 d-flex flex-column justify-content-lg-center my-auto">
+      <p class="m-0 text-muted">{{ post?.date | date }}</p>
     </div>
   </div>
-  
+  <a [href]="getInstaUrl()" target="_blank">
+    <img [src]="post.picture" class="img-fluid" />
+  </a>
+  <div class="card-body">
+    <h5 class="card-text">{{ post.description }}</h5>
+    <p>
+      <fa-icon
+        [icon]="faloc"
+        size="lg"
+        primaryColor="red"
+        class="text-danger"
+      ></fa-icon>
+      {{ post.locationName }}
+    </p>
+  </div>
+
+  <div
+    class="card-footer bg-transparent d-flex justify-content-around align-content-center"
+  >
+    <div (click)="upvotePost()" class="text-success">
+      <fa-icon [icon]="faThumbsUp" size="lg" primaryColor="blue"></fa-icon>
+      {{ upvote }}
+    </div>
+    <div (click)="downvotePost()" class="text-warning">
+      <fa-icon [icon]="faThumbsDown" size="lg" primaryColor="blue"></fa-icon>
+      {{ downvote }}
+    </div>
+    <a [href]="getInstaUrl()" target="_blank" class="text-primary">
+      <fa-icon [icon]="faShareSquare" size="lg" primaryColor="blue"></fa-icon>
+    </a>
+  </div>
+</div>

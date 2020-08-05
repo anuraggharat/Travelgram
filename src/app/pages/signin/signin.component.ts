@@ -23,6 +23,8 @@ export class SigninComponent implements OnInit {
 
   onSubmit(f:NgForm){
     const {email,password} = f.form.value
+    console.log(f);
+    
     this.auth.signIn(email,password)
     .then(
       (res)=>{
